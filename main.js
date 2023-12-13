@@ -7,8 +7,10 @@ const createWindow = () => {
   win = new BrowserWindow({
     frame: false,
     title: 'Rpg Progress',
-    width: 1020,
-    height: 600,
+    width: 1200,
+    height: 800,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -28,4 +30,21 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
+});
+
+ipcMain.on('minimize-window', () => {
+  BrowserWindow.getFocusedWindow().minimize();
+});
+
+ipcMain.on('maximize-window', () => {
+  const focusedWindow = BrowserWindow.getFocusedWindow();
+  if (focusedWindow.isMaximized()) {
+    focusedWindow.unmaximize();
+  } else {
+    focusedWindow.maximize();
+  }
+});
+
+ipcMain.on('close-window', () => {
+  BrowserWindow.getFocusedWindow().close();
 });
