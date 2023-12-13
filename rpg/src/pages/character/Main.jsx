@@ -1,8 +1,10 @@
 import Race from './components/Race';
+import { Stats } from './components/Stats';
 
 export const Main = () => {
   return (
     <main style={{ color: 'white' }} className="character-container">
+      <Stats />
       <Race />
       <div className="charInfo-container">
         <div>
