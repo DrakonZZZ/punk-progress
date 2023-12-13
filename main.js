@@ -9,11 +9,10 @@ const createWindow = () => {
     height: 640,
   });
 
-  const initUrl = url.format({
-    pathname: path.join(__dirname, 'index.html'),
-  });
-
-  win.loadURL(initUrl);
+  win.webContents.openDevTools();
+  //change this location in packaging stage
+  //   win.loadFile(path.join(__dirname, './rpg/public/index.html'));
+  win.loadURL('http://localhost:3000');
 };
 
 app.whenReady().then(() => {
