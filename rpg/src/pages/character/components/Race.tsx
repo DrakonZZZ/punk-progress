@@ -5,18 +5,12 @@ const Race = () => {
   return (
     <div className="race-container">
       {racedata.map((race) => {
-        const {
-          id,
-          race: raceName,
-          species,
-          skills,
-          physicalAttributes,
-        } = race;
+        const { id, race: raceName, skills, physicalAttributes } = race;
         return (
           <Card
+            key={id}
             id={id}
             raceName={raceName}
-            species={species}
             skills={skills}
             physicalAttributes={physicalAttributes}
           />

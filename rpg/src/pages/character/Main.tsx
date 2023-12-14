@@ -1,11 +1,20 @@
+import { ChangeEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Race from './components/Race';
 import { Stats } from './components/Stats';
 
 export const Main = () => {
+  const [characterName, setCharacterName] = useState('');
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setCharacterName(e.target.value);
+  };
+
   return (
     <main style={{ color: 'white' }} className="character-container">
-      <Stats />
       <Race />
+      <Stats />
+
       <div className="charInfo-container">
         <div>
           <div className="char-input">
@@ -13,7 +22,11 @@ export const Main = () => {
               <h3>Your</h3>
               <h2>Character name</h2>
             </div>
-            <input type="text" />
+            <input
+              type="text"
+              value={characterName}
+              onChange={handleInputChange}
+            />
           </div>
           <div className="char-info">
             <h3>Your Backstory</h3>
@@ -29,8 +42,12 @@ export const Main = () => {
             </p>
           </div>
         </div>
-
-        <button className="char-button">NEXT</button>
+        <Link
+          to={characterName ? '/game' : '#'}
+          className={`${characterName ? 'char-button' : 'disabled'}`}
+        >
+          NEXT
+        </Link>
       </div>
     </main>
   );

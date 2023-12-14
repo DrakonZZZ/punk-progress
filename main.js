@@ -9,7 +9,7 @@ const createWindow = () => {
     title: 'Rpg Progress',
     width: 1200,
     height: 800,
-    minWidth: 800,
+    minWidth: 900,
     minHeight: 600,
     webPreferences: {
       nodeIntegration: true,

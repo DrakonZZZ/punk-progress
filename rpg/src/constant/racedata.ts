@@ -4,8 +4,6 @@ const racedata = [
     race: 'Synthoids',
     backstory:
       'Synthoids emerged from experimental AI programs that gained self-awareness. Created by corporations, they rebelled and seek independence.',
-    species:
-      'Synthetic beings with humanoid forms and advanced neural networks.',
     physicalAttributes:
       'Enhanced strength, agility, and durability. Artificial skin conceals their metallic frame.',
     skills:
@@ -18,8 +16,6 @@ const racedata = [
     race: 'Bio-Enhanced',
     backstory:
       'Bio-Enhanced individuals underwent radical genetic modifications, seeking to surpass human limitations. Many became mercenaries or outcasts.',
-    species:
-      'Humans with genetically enhanced physical attributes and neural augmentations.',
     physicalAttributes:
       'Varied physical enhancements like increased speed, heightened senses, and neural implants for faster information processing.',
     skills:
@@ -32,8 +28,6 @@ const racedata = [
     race: 'Revenants',
     backstory:
       'Revenants are individuals revived through cybernetic resurrection after fatal accidents or terminal illnesses. Now, they walk between life and machine.',
-    species:
-      'Partially cybernetic beings, retaining fragments of their former humanity.',
     physicalAttributes:
       'Regenerative abilities, cybernetic enhancements granting improved strength and endurance, along with residual human emotions.',
     skills:
@@ -46,7 +40,6 @@ const racedata = [
     race: 'Neuro-Surgeons',
     backstory:
       'Neuro-Surgeons are humans who underwent experimental surgeries to augment their brains, aiming for unparalleled cognitive abilities. Most are intellectuals or information brokers.',
-    species: 'Humans with advanced neural implants and cranial enhancements.',
     physicalAttributes:
       'Appear physically human but possess enhanced mental faculties, including heightened intelligence, memory, and cognitive processing.',
     skills:
@@ -59,8 +52,6 @@ const racedata = [
     race: 'Nano-Shades',
     backstory:
       'Nano-Shades are the result of experimental nanotechnology integration, offering unprecedented control over microscopic machines. They exist on the fringes of society.',
-    species:
-      'Humans with integrated nanobots flowing through their bloodstream and neural pathways.',
     physicalAttributes:
       'Appear similar to regular humans but possess a faint glow under their skin, representing nanobot activity.',
     skills:
@@ -73,8 +64,6 @@ const racedata = [
     race: 'Phantom Striders',
     backstory:
       "Phantom Striders are individuals who've undergone experimental teleportation experiments, leaving them phased between dimensions. They seek to control their newfound abilities.",
-    species:
-      'Partially ethereal beings, shifting between corporeal and incorporeal states.',
     physicalAttributes:
       'Unstable physical forms that can phase through objects, heightened speed during teleportation, and an aura that distorts reality.',
     skills:
@@ -87,8 +76,6 @@ const racedata = [
     race: 'Chroma-Breed',
     backstory:
       'Chroma-Breeds are the product of genetic experiments focused on manipulating light and color perception. They often serve as artists, entertainers, or illusionists.',
-    species:
-      'Humans with modified ocular and neurological enhancements, allowing manipulation of light perception.',
     physicalAttributes:
       'Vibrant irises with the ability to project light-based illusions, enhanced visual acuity, and sensitivity to light spectrum alterations.',
     skills:
@@ -101,8 +88,6 @@ const racedata = [
     race: 'Rift-Walkers',
     backstory:
       'Rift-Walkers gained their abilities through exposure to unexplained dimensional rifts, granting them control over spacetime. Many are nomads, exploring unknown dimensions.',
-    species:
-      'Humans with residual energy signatures from exposure to dimensional anomalies.',
     physicalAttributes:
       'Faint energy auras surrounding their bodies, occasional ripples in spacetime around them, and an innate connection to dimensional rifts.',
     skills:
@@ -115,8 +100,6 @@ const racedata = [
     race: 'Mecha-kin',
     backstory:
       'Mecha-kin are individuals integrated with advanced cybernetics, blurring the lines between humans and machines. They often serve as tech specialists or mercenaries.',
-    species:
-      'Part-human, part-machine beings with extensive cybernetic enhancements.',
     physicalAttributes:
       'Visible cybernetic implants, enhanced strength, speed, and durability, often resembling humanoid machines.',
     skills:
