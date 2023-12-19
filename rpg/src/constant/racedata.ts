@@ -1,7 +1,7 @@
 const racedata = [
   {
     id: 1,
-    race: 'Synthoids',
+    raceName: 'Synthoids',
     backstory:
       'Synthoids emerged from experimental AI programs that gained self-awareness. Created by corporations, they rebelled and seek independence.',
     physicalAttributes:
@@ -13,7 +13,7 @@ const racedata = [
   },
   {
     id: 2,
-    race: 'Bio-Enhanced',
+    raceName: 'Bio-Enhanced',
     backstory:
       'Bio-Enhanced individuals underwent radical genetic modifications, seeking to surpass human limitations. Many became mercenaries or outcasts.',
     physicalAttributes:
@@ -25,7 +25,7 @@ const racedata = [
   },
   {
     id: 3,
-    race: 'Revenants',
+    raceName: 'Revenants',
     backstory:
       'Revenants are individuals revived through cybernetic resurrection after fatal accidents or terminal illnesses. Now, they walk between life and machine.',
     physicalAttributes:
@@ -37,7 +37,7 @@ const racedata = [
   },
   {
     id: 4,
-    race: 'Neuro-Surgeons',
+    raceName: 'Neuro-Surgeons',
     backstory:
       'Neuro-Surgeons are humans who underwent experimental surgeries to augment their brains, aiming for unparalleled cognitive abilities. Most are intellectuals or information brokers.',
     physicalAttributes:
@@ -49,7 +49,7 @@ const racedata = [
   },
   {
     id: 5,
-    race: 'Nano-Shades',
+    raceName: 'Nano-Shades',
     backstory:
       'Nano-Shades are the result of experimental nanotechnology integration, offering unprecedented control over microscopic machines. They exist on the fringes of society.',
     physicalAttributes:
@@ -61,7 +61,7 @@ const racedata = [
   },
   {
     id: 6,
-    race: 'Phantom Striders',
+    raceName: 'Phantom Striders',
     backstory:
       "Phantom Striders are individuals who've undergone experimental teleportation experiments, leaving them phased between dimensions. They seek to control their newfound abilities.",
     physicalAttributes:
@@ -73,7 +73,7 @@ const racedata = [
   },
   {
     id: 7,
-    race: 'Chroma-Breed',
+    raceName: 'Chroma-Breed',
     backstory:
       'Chroma-Breeds are the product of genetic experiments focused on manipulating light and color perception. They often serve as artists, entertainers, or illusionists.',
     physicalAttributes:
@@ -85,7 +85,7 @@ const racedata = [
   },
   {
     id: 8,
-    race: 'Rift-Walkers',
+    raceName: 'Rift-Walkers',
     backstory:
       'Rift-Walkers gained their abilities through exposure to unexplained dimensional rifts, granting them control over spacetime. Many are nomads, exploring unknown dimensions.',
     physicalAttributes:
@@ -97,7 +97,7 @@ const racedata = [
   },
   {
     id: 9,
-    race: 'Mecha-kin',
+    raceName: 'Mecha-kin',
     backstory:
       'Mecha-kin are individuals integrated with advanced cybernetics, blurring the lines between humans and machines. They often serve as tech specialists or mercenaries.',
     physicalAttributes:

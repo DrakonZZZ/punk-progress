@@ -1,13 +1,15 @@
 interface CardProps {
   id: number;
   raceName: string;
-  skills: string;
+  backstory: string;
   physicalAttributes: string;
+  skills: string;
+  additionalInfo: string;
 }
 
 const Card = (param: CardProps) => {
   return (
-    <div className="card">
+    <div className={`card`}>
       <h3>{param.raceName}</h3>
       <p>{param.skills}</p>
     </div>

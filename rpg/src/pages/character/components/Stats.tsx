@@ -1,28 +1,8 @@
-import { useState } from 'react';
 import StatsCard from './StatsCard';
-
-interface CharacterStats {
-  Strength: number;
-  Agility: number;
-  Intelligence: number;
-  Charisma: number;
-  Dexterity: number;
-  Luck: number;
-  Vitality: number;
-  Total: number;
-}
+import { usePlayerContext } from '../../../context/playerContext';
 
 export const Stats = () => {
-  const [charStats, setCharacterStats] = useState<CharacterStats>({
-    Strength: 0,
-    Agility: 0,
-    Intelligence: 0,
-    Charisma: 0,
-    Dexterity: 0,
-    Luck: 0,
-    Vitality: 0,
-    Total: 0,
-  });
+  const { charStats, setCharacterStats } = usePlayerContext();
 
   const statsArray = Object.entries(charStats);
 
@@ -67,7 +47,7 @@ export const Stats = () => {
           })}
         </div>
       </div>
-      <button className="char-button" onClick={generateRandomStats}>
+      <button className="char-button stat-button" onClick={generateRandomStats}>
         Generate
       </button>
     </div>

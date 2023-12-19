@@ -1,13 +1,14 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Race from './components/Race';
 import { Stats } from './components/Stats';
+import { usePlayerContext } from '../../context/playerContext';
 
 export const Main = () => {
-  const [characterName, setCharacterName] = useState('');
+  const { playerName, setPlayerName, selectedRace } = usePlayerContext();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setCharacterName(e.target.value);
+    setPlayerName(e.target.value);
   };
 
   return (
@@ -24,27 +25,18 @@ export const Main = () => {
             </div>
             <input
               type="text"
-              value={characterName}
+              value={playerName}
               onChange={handleInputChange}
             />
           </div>
           <div className="char-info">
             <h3>Your Backstory</h3>
-            <p>
-              In the sprawling cityscape of NeoGenesis, a hacker awakens with a
-              fractured memory and cybernetic enhancements, remnants of a failed
-              resistance against corporate overlords. Saved by a mysterious
-              figure, they navigate the digital underbelly, piecing together
-              their past while uncovering the megacorps' dark secrets. Armed
-              with hacking skills and determination, they strive to reclaim
-              their identity, expose the truth, and reignite the flames of
-              rebellion in a world dominated by technology and oppression.
-            </p>
+            <p>{selectedRace.backstory}</p>
           </div>
         </div>
         <Link
-          to={characterName ? '/game' : '#'}
-          className={`${characterName ? 'char-button' : 'disabled'}`}
+          to={playerName ? '/game' : '#'}
+          className={`${playerName ? 'char-button' : 'disabled'}`}
         >
           NEXT
         </Link>

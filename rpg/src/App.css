@@ -158,6 +158,17 @@ body {
   width: 100%;
   background-color: #5ec7b6;
   border-radius: 4px;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #429184;
+}
+
+.card-active {
+  background-color: #429184;
 }
 
 /* stats styling */
@@ -187,10 +198,58 @@ body {
   height: 120px;
   background-color: #5ec7b6;
   border-radius: 4px;
+  padding: 1rem 0.5rem;
+  transition: box-shadow 0.3s ease-in-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 .total-card {
   grid-column: span 2;
+  font-size: larger;
+}
+
+.stats-low {
+  background-color: #ff5f5f;
+  animation-name: glowLow;
+  color: #c34141;
+}
+
+.stats-high {
+  background-color: #65ff84;
+  animation-name: glowHigh;
+  color: #44b95b;
+}
+
+.stat-button {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+@keyframes glowLow {
+  0% {
+    box-shadow: 0 0 10px #ff5f5f, 0 0 20px #ff5f5f, 0 0 30px #ff5f5f;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 10px #ff5f5f, 0 0 20px #ff5f5f, 0 0 30px #ff5f5f;
+  }
+}
+
+@keyframes glowHigh {
+  0% {
+    box-shadow: 0 0 10px #65ff84, 0 0 20px #65ff84, 0 0 30px #65ff84;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 10px #65ff84, 0 0 20px #65ff84, 0 0 30px #65ff84;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
