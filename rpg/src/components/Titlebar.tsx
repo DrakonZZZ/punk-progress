@@ -17,17 +17,17 @@ const Titlebar = () => {
   };
   return (
     <div className="titlebar">
-      <img src="./favicon-16x16.png" alt="logo" className="logo" />
+      <img src="./favicon-32x32.png" alt="logo" className="logo" />
       <p className="titlebar-heading">PUNK PROGRESS</p>
       <span className="titleBar-button">
         <button id="minimize" onClick={minimizeWindow}>
-          <Min stroke="#6EECD4" width={18} height={18} />
+          <Min stroke="#99553d" width={18} height={18} />
         </button>
         <button id="maximize" onClick={maximizeWindow}>
-          <Max stroke="#6EECD4" width={18} height={18} />
+          <Max stroke="#99553d" width={18} height={18} />
         </button>
         <button id="quit" onClick={closeWindow}>
-          <Close stroke="#6EECD4" width={18} height={18} />
+          <Close stroke="#99553d" width={18} height={18} />
         </button>
       </span>
     </div>

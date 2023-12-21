@@ -1,32 +1,14 @@
 import Card from '../../../components/Card';
 import racedata from '../../../constant/racedata';
-import { usePlayerContext } from '../../../context/playerContext';
-
+import { memo } from 'react';
 const Race = () => {
-  const { selectedRace, setSelectedRace } = usePlayerContext();
-
-  console.log(selectedRace);
+  console.log('render');
   return (
     <div className="race-container">
       {racedata.map((race) => {
-        const {
-          id,
-          raceName,
-          backstory,
-          skills,
-          physicalAttributes,
-          additionalInfo,
-        } = race;
         return (
-          <div key={id} onClick={() => setSelectedRace(race)}>
-            <Card
-              id={id}
-              backstory={backstory}
-              raceName={raceName}
-              skills={skills}
-              physicalAttributes={physicalAttributes}
-              additionalInfo={additionalInfo}
-            />
+          <div key={race.id}>
+            <Card {...race} />
           </div>
         );
       })}
@@ -34,4 +16,4 @@ const Race = () => {
   );
 };
 
-export default Race;
+export default memo(Race);

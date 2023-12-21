@@ -27,6 +27,7 @@ export const Main = () => {
               type="text"
               value={playerName}
               onChange={handleInputChange}
+              placeholder="Volden"
             />
           </div>
           <div className="char-info">
@@ -34,12 +35,17 @@ export const Main = () => {
             <p>{selectedRace.backstory}</p>
           </div>
         </div>
-        <Link
-          to={playerName ? '/game' : '#'}
-          className={`${playerName ? 'char-button' : 'disabled'}`}
-        >
-          NEXT
-        </Link>
+        <div>
+          {!playerName && (
+            <div className="char-btn-warn">Please provide a character name</div>
+          )}
+          <Link
+            to={playerName ? '/game' : '#'}
+            className={`${playerName ? 'char-button' : 'disabled'}`}
+          >
+            NEXT
+          </Link>
+        </div>
       </div>
     </main>
   );

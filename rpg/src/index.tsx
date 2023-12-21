@@ -7,9 +7,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <PlayerContext>
-      <Layout />
-    </PlayerContext>
-  </React.StrictMode>
+  <PlayerContext>
+    <Layout />
+  </PlayerContext>
 );

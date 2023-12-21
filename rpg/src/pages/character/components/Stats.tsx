@@ -48,7 +48,7 @@ export const Stats = () => {
         </div>
       </div>
       <button className="char-button stat-button" onClick={generateRandomStats}>
-        Generate
+        ROLL
       </button>
     </div>
   );
