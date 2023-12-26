@@ -1,5 +1,5 @@
 {
-  "name": "rpg-progress",
+  "name": "electron-app",
   "version": "0.0.1",
   "description": "Progress quest inspired app",
   "main": "main.js",
