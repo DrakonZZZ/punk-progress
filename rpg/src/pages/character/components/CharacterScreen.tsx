@@ -1,14 +1,21 @@
-import { ChangeEvent } from 'react';
 import { usePlayerContext } from '../../../context/playerContext';
+import { ChangeEvent, useState } from 'react';
 import Race from './Race';
 import { Stats } from './Stats';
 import { Link } from 'react-router-dom';
 
 export const CharacterScreen = () => {
-  const { playerName, selectedRace, setPlayerName } = usePlayerContext();
+  const { selectedRace, setPlayerName } = usePlayerContext();
+  const [inputValue, setInputValue] = useState('');
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPlayerName(e.target.value);
+    setInputValue(e.target.value);
   };
+
+  const handleNextClick = () => {
+    setPlayerName(inputValue);
+  };
+
   return (
     <main style={{ color: 'white' }} className="character-container">
       <Race />
@@ -23,7 +30,7 @@ export const CharacterScreen = () => {
             </div>
             <input
               type="text"
-              value={playerName}
+              value={inputValue}
               onChange={handleInputChange}
               placeholder="Volden"
             />
@@ -34,12 +41,13 @@ export const CharacterScreen = () => {
           </div>
         </div>
         <div>
-          {!playerName && (
+          {!inputValue && (
             <div className="char-btn-warn">Please provide a character name</div>
           )}
           <Link
-            to={playerName ? '/game' : '#'}
-            className={`${playerName ? 'char-button' : 'disabled'}`}
+            to={inputValue ? '/game' : '#'}
+            className={`${inputValue.length > 4 ? 'char-button' : 'disabled'}`}
+            onClick={handleNextClick}
           >
             NEXT
           </Link>

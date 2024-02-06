@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { usePlayerContext } from '../../context/playerContext';
 import { CharacterScreen } from './components/CharacterScreen';
 import LoadScreen from './components/LoadScreen';
 
 export const Main = () => {
-  const { playerName } = usePlayerContext();
-  const [existingPlayer, setExistingPlayer] = useState<Boolean>(true);
+  const { playerName, existingPlayer, setExistingPlayer } = usePlayerContext();
 
   useEffect(() => {
     if (playerName) {
@@ -13,7 +12,7 @@ export const Main = () => {
     } else {
       setExistingPlayer(false);
     }
-  }, [playerName]);
+  }, [playerName, setExistingPlayer]);
 
   return <>{existingPlayer ? <LoadScreen /> : <CharacterScreen />}</>;
 };

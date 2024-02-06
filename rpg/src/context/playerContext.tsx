@@ -3,6 +3,7 @@ import {
   CharacterStats,
   PlayerContextProp,
   PlayerContextValue,
+  PlayerValue,
   RaceData,
 } from '../types/player.types';
 import { defaultStats, selected } from '../constant/racedata';
@@ -20,52 +21,76 @@ export const usePlayerContext = () => {
 };
 
 const PlayerContext = ({ children }: PlayerContextProp) => {
-  const [playerName, setPlayerNameState] = useState('');
-  const [selectedRace, setSelectedRaceState] = useState<RaceData>(selected);
-  const [charStats, setCharacterStatsState] =
-    useState<CharacterStats>(defaultStats);
+  const [playerState, setPlayerState] = useState<PlayerValue>({
+    playerName: '',
+    selectedRace: selected,
+    charStats: defaultStats,
+    existingPlayer: true,
+  });
 
   useEffect(() => {
     const storedPlayerName = localStorage.getItem('playerName');
     const storedSelectedRace = localStorage.getItem('selectedRace');
     const storedCharStats = localStorage.getItem('charStats');
+    const storedExistingPlayer = localStorage.getItem('existingPlayer');
 
-    if (storedPlayerName) setPlayerNameState(storedPlayerName);
+    if (storedPlayerName)
+      setPlayerState((prevState) => ({
+        ...prevState,
+        playerName: storedPlayerName,
+      }));
     if (storedSelectedRace)
-      setSelectedRaceState(JSON.parse(storedSelectedRace));
-    if (storedCharStats) setCharacterStatsState(JSON.parse(storedCharStats));
+      setPlayerState((prevState) => ({
+        ...prevState,
+        selectedRace: JSON.parse(storedSelectedRace),
+      }));
+    if (storedCharStats)
+      setPlayerState((prevState) => ({
+        ...prevState,
+        charStats: JSON.parse(storedCharStats),
+      }));
+    if (storedExistingPlayer)
+      setPlayerState((prevState) => ({
+        ...prevState,
+        existingPlayer: JSON.parse(storedExistingPlayer),
+      }));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('playerName', playerName);
-  }, [playerName]);
+    localStorage.setItem('playerName', playerState.playerName);
+  }, [playerState.playerName]);
 
   useEffect(() => {
-    localStorage.setItem('selectedRace', JSON.stringify(selectedRace));
-  }, [selectedRace]);
+    localStorage.setItem(
+      'selectedRace',
+      JSON.stringify(playerState.selectedRace)
+    );
+  }, [playerState.selectedRace]);
 
   useEffect(() => {
-    localStorage.setItem('charStats', JSON.stringify(charStats));
-  }, [charStats]);
+    localStorage.setItem('charStats', JSON.stringify(playerState.charStats));
+  }, [playerState.charStats]);
 
-  const setPlayerName = (name: string) => {
-    setPlayerNameState(name);
-  };
-  const setSelectedRace = (race: RaceData) => {
-    setSelectedRaceState(race);
-  };
-
-  const setCharacterStats = (stats: CharacterStats) => {
-    setCharacterStatsState(stats);
-  };
+  useEffect(() => {
+    localStorage.setItem(
+      'existingPlayer',
+      JSON.stringify(playerState.existingPlayer)
+    );
+  }, [playerState.existingPlayer]);
 
   const contextValue: PlayerContextValue = {
-    playerName,
-    selectedRace,
-    charStats,
-    setPlayerName,
-    setSelectedRace,
-    setCharacterStats,
+    ...playerState,
+    setPlayerName: (name: string) =>
+      setPlayerState((prevState) => ({ ...prevState, playerName: name })),
+    setSelectedRace: (race: RaceData) =>
+      setPlayerState((prevState) => ({ ...prevState, selectedRace: race })),
+    setCharacterStats: (stats: CharacterStats) =>
+      setPlayerState((prevState) => ({ ...prevState, charStats: stats })),
+    setExistingPlayer: (existing: boolean) =>
+      setPlayerState((prevState) => ({
+        ...prevState,
+        existingPlayer: existing,
+      })),
   };
 
   return (

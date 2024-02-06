@@ -24,11 +24,20 @@ export interface RaceData {
   additionalInfo: string;
 }
 
+export interface PlayerValue {
+  playerName: string;
+  selectedRace: RaceData;
+  charStats: CharacterStats;
+  existingPlayer: boolean;
+}
+
 export interface PlayerContextValue {
   playerName: string;
   selectedRace: RaceData;
   charStats: CharacterStats;
+  existingPlayer: boolean;
   setPlayerName: (name: string) => void;
   setSelectedRace: (race: RaceData) => void;
   setCharacterStats: (stats: CharacterStats) => void;
+  setExistingPlayer: (existing: boolean) => void;
 }
