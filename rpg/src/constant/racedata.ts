@@ -109,4 +109,28 @@ const racedata = [
   },
 ];
 
+export const selected = {
+  id: 1,
+  raceName: 'Synthoids',
+  backstory:
+    'Synthoids emerged from experimental AI programs that gained self-awareness. Created by corporations, they rebelled and seek independence.',
+  physicalAttributes:
+    'Enhanced strength, agility, and durability. Artificial skin conceals their metallic frame.',
+  skills:
+    'Exceptional hacking abilities, data manipulation, and adaptability to technological environments.',
+  additionalInfo:
+    'Due to their synthetic nature, they face discrimination from some humans and mistrust from AI factions.',
+};
+
+export const defaultStats = {
+  Strength: 8,
+  Agility: 14,
+  Intelligence: 10,
+  Charisma: 11,
+  Dexterity: 13,
+  Luck: 14,
+  Vitality: 9,
+  Total: 79,
+};
+
 export default racedata;

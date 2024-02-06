@@ -26,9 +26,9 @@ export interface RaceData {
 
 export interface PlayerContextValue {
   playerName: string;
-  setPlayerName: React.Dispatch<React.SetStateAction<string>>;
   selectedRace: RaceData;
-  setSelectedRace: React.Dispatch<React.SetStateAction<RaceData>>;
   charStats: CharacterStats;
-  setCharacterStats: React.Dispatch<React.SetStateAction<CharacterStats>>;
+  setPlayerName: (name: string) => void;
+  setSelectedRace: (race: RaceData) => void;
+  setCharacterStats: (stats: CharacterStats) => void;
 }

@@ -1,25 +1,13 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import {
   CharacterStats,
   PlayerContextProp,
   PlayerContextValue,
   RaceData,
-} from './player.types';
+} from '../types/player.types';
+import { defaultStats, selected } from '../constant/racedata';
 
 const GlobalContext = createContext<PlayerContextValue | undefined>(undefined);
-
-const selected = {
-  id: 1,
-  raceName: 'Synthoids',
-  backstory:
-    'Synthoids emerged from experimental AI programs that gained self-awareness. Created by corporations, they rebelled and seek independence.',
-  physicalAttributes:
-    'Enhanced strength, agility, and durability. Artificial skin conceals their metallic frame.',
-  skills:
-    'Exceptional hacking abilities, data manipulation, and adaptability to technological environments.',
-  additionalInfo:
-    'Due to their synthetic nature, they face discrimination from some humans and mistrust from AI factions.',
-};
 
 export const usePlayerContext = () => {
   const context = useContext(GlobalContext);
@@ -32,25 +20,51 @@ export const usePlayerContext = () => {
 };
 
 const PlayerContext = ({ children }: PlayerContextProp) => {
-  const [playerName, setPlayerName] = useState('');
-  const [selectedRace, setSelectedRace] = useState<RaceData>(selected);
-  const [charStats, setCharacterStats] = useState<CharacterStats>({
-    Strength: 8,
-    Agility: 14,
-    Intelligence: 10,
-    Charisma: 11,
-    Dexterity: 13,
-    Luck: 14,
-    Vitality: 9,
-    Total: 79,
-  });
+  const [playerName, setPlayerNameState] = useState('');
+  const [selectedRace, setSelectedRaceState] = useState<RaceData>(selected);
+  const [charStats, setCharacterStatsState] =
+    useState<CharacterStats>(defaultStats);
+
+  useEffect(() => {
+    const storedPlayerName = localStorage.getItem('playerName');
+    const storedSelectedRace = localStorage.getItem('selectedRace');
+    const storedCharStats = localStorage.getItem('charStats');
+
+    if (storedPlayerName) setPlayerNameState(storedPlayerName);
+    if (storedSelectedRace)
+      setSelectedRaceState(JSON.parse(storedSelectedRace));
+    if (storedCharStats) setCharacterStatsState(JSON.parse(storedCharStats));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('playerName', playerName);
+  }, [playerName]);
+
+  useEffect(() => {
+    localStorage.setItem('selectedRace', JSON.stringify(selectedRace));
+  }, [selectedRace]);
+
+  useEffect(() => {
+    localStorage.setItem('charStats', JSON.stringify(charStats));
+  }, [charStats]);
+
+  const setPlayerName = (name: string) => {
+    setPlayerNameState(name);
+  };
+  const setSelectedRace = (race: RaceData) => {
+    setSelectedRaceState(race);
+  };
+
+  const setCharacterStats = (stats: CharacterStats) => {
+    setCharacterStatsState(stats);
+  };
 
   const contextValue: PlayerContextValue = {
     playerName,
-    setPlayerName,
     selectedRace,
-    setSelectedRace,
     charStats,
+    setPlayerName,
+    setSelectedRace,
     setCharacterStats,
   };
 
