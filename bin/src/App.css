@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -18,21 +18,44 @@
   --primary-color-900: #002b3d;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #161616;
+a {
+  text-decoration: none;
+  color: var(--primary-color-800);
+  font-weight: 600;
 }
 
+body {
+  font-family: 'Kode Mono', monospace;
+  background-color: #161616;
+}
+/*
+.image-container {
+  opacity: 1;
+}
+
+.image-container::before {
+  content: '';
+  background-image: url('../public/screen_images/main-menu.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+} */
+
 .titlebar {
-  height: 32px;
-  color: var(--primary-color-500);
-  font-weight: 600;
-  font-size: small;
+  height: 40px;
+  color: var(--primary-color-100);
+  font-weight: 700;
+  font-size: medium;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.4rem;
-  background-color: #161616;
   position: sticky;
   top: 0;
   left: 0;
@@ -62,12 +85,44 @@ body {
 #minimize > svg:hover,
 #maximize > svg:hover,
 #quit > svg:hover {
-  stroke: #9df3fe;
+  stroke: var(--primary-color-100);
 }
 
 .regular-paragraph {
   font-size: 14px;
   color: rgb(189, 189, 189);
+}
+
+/* Main menu */
+
+.main-menu-container {
+  height: calc(100vh - 40px);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* placeholder image */
+}
+
+.mainmenu-link {
+  margin: 4rem;
+  min-width: 500px;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+}
+
+.mainmenu-link a {
+  padding: 3rem;
+  text-align: left;
+  color: #9df3fe85;
+  background-color: #0c97c50d;
+}
+
+.mainmenu-link a:hover {
+  color: var(--primary-color-900);
+  background-color: var(--primary-color-100);
+  transition: all 0.2s ease-in-out;
 }
 
 /* character input styling */

@@ -2,12 +2,17 @@ import { Link } from 'react-router-dom';
 
 const MainMenu = () => {
   return (
-    <main style={{ color: 'white' }} className="loading-container">
-      <section>
-        <Link to={'/charSelect'}>New Game</Link>
-        <Link to={'/load'}>Load</Link>
-        <Link to={'/settings'}>Settings</Link>
-      </section>
+    <main
+      style={{ color: 'white' }}
+      className="main-menu-container image-container"
+    >
+      <div className="mainmenu-link">
+        <Link to={'/charSelect'}>NEW GAME</Link>
+        <Link to={'/load'}>LOAD</Link>
+        <Link to={'/settings'} className="settings-link">
+          SETTINGS
+        </Link>
+      </div>
     </main>
   );
 };
