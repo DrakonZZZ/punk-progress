@@ -122,6 +122,7 @@ export const selected = {
     'Due to their synthetic nature, they face discrimination from some humans and mistrust from AI factions.',
 };
 
+
 export const defaultStats = {
   Strength: 8,
   Agility: 14,

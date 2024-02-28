@@ -24,6 +24,7 @@ const appRouter = createBrowserRouter([
     path: '/charSelect',
     element: <CharacterMain />,
   },
+
   {
     path: '/game',
     element: <GameMain />,

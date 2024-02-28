@@ -7,20 +7,20 @@
 }
 
 :root {
-  --primary-color-100: #9df3fe;
-  --primary-color-200: #7ae4fd;
-  --primary-color-300: #5cd5fd;
-  --primary-color-400: #3ec6fd;
-  --primary-color-500: #1db9fc;
-  --primary-color-600: #0c97c5;
-  --primary-color-700: #005e7a;
-  --primary-color-800: #004657;
-  --primary-color-900: #002b3d;
+  --primary-color-100: 157, 243, 254;
+  --primary-color-200: 122, 228, 253;
+  --primary-color-300: 92, 213, 253;
+  --primary-color-400: 62, 198, 253;
+  --primary-color-500: 29, 185, 252;
+  --primary-color-600: 12, 151, 197;
+  --primary-color-700: 0, 94, 122;
+  --primary-color-800: 0, 70, 87;
+  --primary-color-900: 0, 43, 61;
 }
 
 a {
   text-decoration: none;
-  color: var(--primary-color-800);
+  color: rgb(var(--primary-color-800));
   font-weight: 600;
 }
 
@@ -28,14 +28,10 @@ body {
   font-family: 'Kode Mono', monospace;
   background-color: #161616;
 }
-/*
-.image-container {
-  opacity: 1;
-}
 
-.image-container::before {
+body::before {
   content: '';
-  background-image: url('../public/screen_images/main-menu.png');
+  background-image: url('../public/screen_images/main-menu-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -44,12 +40,12 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.4;
-} */
+  opacity: 0.2;
+}
 
 .titlebar {
   height: 40px;
-  color: var(--primary-color-100);
+  color: rgb(var(--primary-color-100));
   font-weight: 700;
   font-size: medium;
   display: flex;
@@ -85,7 +81,7 @@ body {
 #minimize > svg:hover,
 #maximize > svg:hover,
 #quit > svg:hover {
-  stroke: var(--primary-color-100);
+  stroke: rgb(var(--primary-color-100));
 }
 
 .regular-paragraph {
@@ -101,7 +97,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* placeholder image */
 }
 
 .mainmenu-link {
@@ -116,12 +111,12 @@ body {
   padding: 3rem;
   text-align: left;
   color: #9df3fe85;
-  background-color: #0c97c50d;
+  background-color: #0c97c536;
 }
 
 .mainmenu-link a:hover {
-  color: var(--primary-color-900);
-  background-color: var(--primary-color-100);
+  color: rgb(var(--primary-color-900));
+  background-color: rgb(var(--primary-color-100));
   transition: all 0.2s ease-in-out;
 }
 
@@ -220,123 +215,6 @@ body {
   justify-content: center;
   align-items: center;
   cursor: not-allowed;
-}
-
-/* race selction styling */
-
-.race-container {
-  height: calc(100vh - 32px);
-  width: 40%;
-  padding: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-}
-
-.card {
-  min-height: 140px;
-  width: 100%;
-  border: 1px solid var(--primary-color-300);
-  padding: 1rem;
-  transition: all 0.1s ease-in-out;
-  cursor: pointer;
-}
-
-.card-active {
-  transform: scale(1.03);
-}
-
-/* stats styling */
-
-.stats-container {
-  width: 40%;
-  max-width: 600px;
-  height: calc(100vh - 32px);
-  padding: 1.2rem;
-  margin: 0 auto;
-  overflow: auto;
-}
-
-.stats-points {
-  width: 100%;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.stats-card {
-  height: 120px;
-  border: 1px solid var(--primary-color-300);
-  padding: 1rem 0.5rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.total-card {
-  grid-column: span 2;
-  font-size: larger;
-}
-
-.stats-low {
-  border: 2px solid #c34141;
-  background-color: #ff5f5f53;
-  animation-name: glowLow;
-  color: #c34141;
-}
-
-.stats-high {
-  border: 2px solid #44b95b;
-  background-color: #65ff8455;
-  animation-name: glowHigh;
-  color: #44b95b;
-}
-
-.stat-button {
-  margin-top: 1rem;
-  padding: 1rem 2rem;
-  cursor: pointer;
-}
-
-@keyframes glowLow {
-  0% {
-    box-shadow: 0 0 10px #ff5f5f, 0 0 20px #ff5f5f, 0 0 30px #ff5f5f;
-  }
-  50% {
-    box-shadow: none;
-  }
-  100% {
-    box-shadow: 0 0 10px #ff5f5f, 0 0 20px #ff5f5f, 0 0 30px #ff5f5f;
-  }
-}
-
-@keyframes glowHigh {
-  0% {
-    box-shadow: 0 0 10px #65ff84, 0 0 20px #65ff84, 0 0 30px #65ff84;
-  }
-  50% {
-    box-shadow: none;
-  }
-  100% {
-    box-shadow: 0 0 10px #65ff84, 0 0 20px #65ff84, 0 0 30px #65ff84;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
 }
 
 /* scroll styling */
