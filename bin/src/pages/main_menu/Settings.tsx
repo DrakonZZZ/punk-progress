@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 const Settings = () => {
   return (
-    <>
-      <div>Settings</div>
+    <main className="setting-main-container">
       <Link to="/">back</Link>
-    </>
+      <div>Settings</div>
+    </main>
   );
 };
 

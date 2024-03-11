@@ -7,15 +7,15 @@
 }
 
 :root {
-  --primary-color-100: 157, 243, 254;
-  --primary-color-200: 122, 228, 253;
-  --primary-color-300: 92, 213, 253;
-  --primary-color-400: 62, 198, 253;
-  --primary-color-500: 29, 185, 252;
-  --primary-color-600: 12, 151, 197;
-  --primary-color-700: 0, 94, 122;
-  --primary-color-800: 0, 70, 87;
-  --primary-color-900: 0, 43, 61;
+  --primary-color-100: 231, 182, 185;
+  --primary-color-200: 215, 132, 136;
+  --primary-color-300: 187, 16, 32;
+  --primary-color-400: 153, 0, 26;
+  --primary-color-500: 119, 0, 20;
+  --primary-color-600: 85, 0, 14;
+  --primary-color-700: 51, 0, 8;
+  --primary-color-800: 34, 0, 5;
+  --primary-color-900: 17, 0, 2;
 }
 
 a {
@@ -31,7 +31,6 @@ body {
 
 body::before {
   content: '';
-  background-image: url('../public/screen_images/main-menu-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -110,14 +109,36 @@ body::before {
 .mainmenu-link a {
   padding: 3rem;
   text-align: left;
-  color: #9df3fe85;
-  background-color: #0c97c536;
+  color: rgb(var(--primary-color-300));
+  background-color: rgba(var(--primary-color-300), 0.1);
 }
 
 .mainmenu-link a:hover {
-  color: rgb(var(--primary-color-900));
-  background-color: rgb(var(--primary-color-100));
+  color: white;
+  background-color: rgb(var(--primary-color-600));
   transition: all 0.2s ease-in-out;
+}
+
+.page-navigator {
+  a {
+    color: rgb(var(--primary-color-400));
+  }
+
+  a:hover {
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+/* main menu settings */
+
+.setting-main-container {
+  height: calc(100vh - 40px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* character input styling */

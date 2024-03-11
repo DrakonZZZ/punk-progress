@@ -10,10 +10,12 @@
   a {
     width: 100%;
     text-align: left;
+    color: rgb(var(--primary-color-300));
   }
 
   a:hover {
     color: white;
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -60,7 +62,7 @@
 }
 
 .load-img {
-  border: 2px solid rgba(var(--primary-color-100), 0.3);
+  border: 2px solid rgba(var(--primary-color-300), 0.3);
   height: 80%;
 
   .loading-picture {
