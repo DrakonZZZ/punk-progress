@@ -1,5 +1,6 @@
 import './styles/char-style.css';
 import { Link } from 'react-router-dom';
+import { CharacterData } from '../../constant/characterData';
 
 const CharacterMain = () => {
   return (
@@ -15,13 +16,20 @@ const CharacterMain = () => {
         </div>
         <div className="character-profile-box">
           <div className="chararcter-cards">
-            {Array(20)
-              .fill(1)
-              .map((char, idx) => {
-                return <div key={idx} className="char-card"></div>;
-              })}
+            {CharacterData.map((char, idx) => {
+              console.log(char.name);
+              return (
+                <div key={idx} className="char-card">
+                  <img
+                    src={char.characterImage}
+                    alt={char.name}
+                    className="char-avatar"
+                  />
+                </div>
+              );
+            })}
           </div>
-          <div className="character-image"></div>
+          <div className="character-full-image"></div>
         </div>
       </div>
     </main>

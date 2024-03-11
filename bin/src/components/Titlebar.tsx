@@ -16,13 +16,15 @@ const Titlebar = () => {
     ipcRenderer.send('close-window');
   };
 
-  const strokeColor = '#004657';
+  const strokeColor = '#770014';
 
   return (
     <div className="titlebar">
-      <img src="./favicon-32x32.png" alt="logo" className="logo" />
-      {/* add text logo here */}
-      <p className="titlebar-heading">Raccoon City</p>
+      <img
+        src="./screen_images/logo.png"
+        alt="main-ligo"
+        className="titlebar-logo"
+      />
       <span className="titleBar-button">
         <button id="minimize" onClick={minimizeWindow}>
           <Min stroke={strokeColor} width={18} height={18} />

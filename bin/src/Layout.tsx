@@ -5,10 +5,10 @@ import appRouter from './router/AppRouter';
 
 const Layout = () => {
   return (
-    <>
+    <div>
       <Titlebar />
       <RouterProvider router={appRouter} />
-    </>
+    </div>
   );
 };
 
