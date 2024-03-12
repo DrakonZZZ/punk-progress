@@ -1,6 +1,4 @@
-import { ReactComponent as Min } from '../assets/icons/minimize-2.svg';
-import { ReactComponent as Max } from '../assets/icons/maximize.svg';
-import { ReactComponent as Close } from '../assets/icons/x-square.svg';
+import { ReactComponent as Circle } from '../assets/icons/circle.svg';
 const { ipcRenderer } = window.require('electron');
 
 const Titlebar = () => {
@@ -27,13 +25,13 @@ const Titlebar = () => {
       />
       <span className="titleBar-button">
         <button id="minimize" onClick={minimizeWindow}>
-          <Min stroke={strokeColor} width={18} height={18} />
+          <Circle stroke={strokeColor} width={18} height={18} />
         </button>
         <button id="maximize" onClick={maximizeWindow}>
-          <Max stroke={strokeColor} width={18} height={18} />
+          <Circle stroke={strokeColor} width={18} height={18} />
         </button>
         <button id="quit" onClick={closeWindow}>
-          <Close stroke={strokeColor} width={18} height={18} />
+          <Circle stroke={strokeColor} width={18} height={18} />
         </button>
       </span>
     </div>
